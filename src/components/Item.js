@@ -14,9 +14,9 @@ function handleAddCartClick(){
       <span>{name}</span>
       <span className="category">{category}</span>
       <button 
-      className = {isInCart ? "remove" : "add"} 
-      onClick={handleAddCartClick}>
-        {isInCart ? "Remove From" : "Add to"}Cart
+      className = {isInCart ? "in-cart": ""} 
+      onClick={handleAddCartClick}>{isInCart ? "Remove From" : "Add to"}
+         Cart
         </button>
     </li>
   

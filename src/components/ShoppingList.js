@@ -9,7 +9,7 @@ function ShoppingList({ items }) {
   }
 
   const itemsToDisplay = items.filter((item)=>{
-    if (selectedCategory==="all"){
+    if (selectedCategory==="All"){
       return true;
     }else {
       return item.category===selectedCategory;
@@ -28,7 +28,7 @@ function ShoppingList({ items }) {
         </select>
       </div>
       <ul className="Items">
-        {items.map((item) => (
+        {itemsToDisplay.map((item) => (
           <Item key={item.id} name={item.name} category={item.category} />
         ))}
       </ul>
