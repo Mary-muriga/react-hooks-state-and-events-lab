@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import Item from "./Item";
 
 function ShoppingList({ items }) {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   function handleCategoryChange(event) {
     setSelectedCategory(event.target.value);
   }
 
   const itemsToDisplay = items.filter((item)=>{
-    if (selectedCategory==="all"){
+    if (selectedCategory==="All"){
       return true;
     }else {
       return item.category===selectedCategory;
@@ -28,7 +28,7 @@ function ShoppingList({ items }) {
         </select>
       </div>
       <ul className="Items">
-        {items.map((item) => (
+        {itemsToDisplay.map((item) => (
           <Item key={item.id} name={item.name} category={item.category} />
         ))}
       </ul>
